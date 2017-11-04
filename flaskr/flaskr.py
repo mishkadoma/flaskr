@@ -62,7 +62,7 @@ def show_entries():
 
 
 @app.route('/add', methods=['POST'])
-def app_entry():
+def add_entry():
     if not session.get('logged_in'):
         abort(401)
     db = get_db()
