@@ -1,2 +1,4 @@
 env/
 env
+flaskr.egg*
+flaskr/_*
