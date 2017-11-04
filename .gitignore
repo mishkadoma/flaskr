@@ -3,3 +3,4 @@ env
 flaskr.egg*
 flaskr/_*
 flaskr/flaskr.db
+tests/_*
