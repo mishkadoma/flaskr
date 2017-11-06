@@ -10,6 +10,10 @@
         <dd><input type=submit value=Share>
       </dl>
     </form>
+    <form class="" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+      <dd><input type="file" name="the_file" value="heh"></dd>
+      <dd><input type="submit" value=""></dd>
+    </form>
   {% endif %}
   <ul class=entries>
   {% for entry in entries %}
