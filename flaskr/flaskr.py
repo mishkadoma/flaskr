@@ -3,6 +3,7 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash
 from flask import current_app
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 with app.app_context():
@@ -107,5 +108,6 @@ def logout():
 @app.route('/upload', methods=['POST'])
 def upload():
     f = request.files['the_file']
-    f.save('/home/mishkadoma/Desktop/internet_file.txt')
+    f.save('/home/mishkadoma/Desktop/flaskr/uploads' +
+           secure_filename(f.filename))
     return "success"
