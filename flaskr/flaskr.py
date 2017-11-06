@@ -102,3 +102,10 @@ def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
     return redirect(url_for('show_entries'))
+
+
+@app.route('/upload', methods=['POST'])
+def upload():
+    f = request.files['the_file']
+    f.save('/home/mishkadoma/Desktop/internet_file.txt')
+    return "success"
