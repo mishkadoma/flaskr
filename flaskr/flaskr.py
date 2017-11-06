@@ -111,3 +111,13 @@ def upload():
     f.save('/home/mishkadoma/Desktop/flaskr/uploads' +
            secure_filename(f.filename))
     return "success"
+
+
+@app.route('/error_404')
+def error_404():
+    abort(404)
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html'), 404
