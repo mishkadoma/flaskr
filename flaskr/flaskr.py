@@ -77,6 +77,7 @@ def add_entry():
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -90,6 +91,7 @@ def login():
             flash('You were logged in')
             return redirect(url_for('show_entries'))
     return render_template('login.html', error=error)
+
 
 @app.route('/logout')
 def logout():
