@@ -2,9 +2,13 @@ import os
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash
-
+from flask import current_app
 
 app = Flask(__name__)
+with app.app_context():
+    print(current_app.name)
+
+
 app.config.from_object(__name__)
 
 
